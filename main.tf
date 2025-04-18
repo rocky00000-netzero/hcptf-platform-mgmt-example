@@ -25,6 +25,7 @@ module "random_pets_1_project" {
 module "random_pets_1_mgmt_ws" {
   source  = "alexbasista/workspacer/tfe"
   version = "0.12.0"
+  depends_on = [module.random_pets_1_project]
 
   organization   = var.organization
   workspace_name = "random-pets-1-mgmt-ws"
@@ -49,6 +50,7 @@ module "random_pets_2_project" {
 module "random_pets_2_mgmt_ws" {
   source  = "alexbasista/workspacer/tfe"
   version = "0.12.0"
+  depends_on = [module.random_pets_2_project]
 
   organization   = var.organization
   workspace_name = "random-pets-2-mgmt-ws"
